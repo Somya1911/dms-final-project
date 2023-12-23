@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Customer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 15px;
+        }
+
+        label, input[type="text"], input[type="submit"] {
+            display: block;
+            width: 95%;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff6a00;
+        }
+
+        a {
+            color: #337ab7;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Customer</h2>
+        <p><a href="{{ url_for('customer_lookup') }}">Customer Lifetime Value Prediction</a></p>
+        <p><a href="{{ url_for('dashboard') }}">Dashboard</a></p>
+        <p><a href="{{ url_for('home') }}">Back to Main Screen</a></p>
+
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.first_name.label }}<br>
+                {{ form.first_name(size=20) }}<br>
+            </p>
+            <p>
+                {{ form.last_name.label }}<br>
+                {{ form.last_name(size=20) }}<br>
+            </p>
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=20) }}<br>
+            </p>
+            <p>
+                {{ form.country.label }}<br>
+                {{ form.country(size=20) }}<br>
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+</body>
+</html>

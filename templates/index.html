@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Screen</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .main-header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #ff6a00 3px solid;
+        }
+
+        .main-header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .university-info {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .main-nav {
+            background: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .main-nav ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .main-nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .main-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main-nav ul li a:hover {
+            color: #ff6a00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Database Management System Final Project</h1>
+            <div class="university-info">
+                <p>Somya Khatri and Kareena Redij</p>
+                <p>New York University</p>
+                <p>New York University</p>
+                <p>Computer Science Department</p>
+                <p>Courant Institute of Mathematical Sciences</p>
+            </div>
+        </header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('add_customer') }}">Add Customer</a></li>
+                <li><a href="{{ url_for('customer_lookup') }}">Customer Value Prediction</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
+
